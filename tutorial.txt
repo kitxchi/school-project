@@ -1,0 +1,134 @@
+1. Set-Location – Zmienia bieżący katalog roboczy w PowerShell.
+
+
+	Przykład:	
+		
+		Set-Location -Path "C:\Windows"
+
+
+2. Copy-Item – Kopiuje plik lub folder do innej lokalizacji.
+
+
+	Przykład:	
+	
+		Copy-Item -Path "C:\index.html" -Destination "C:\test\index.html"
+
+
+3. Get-Location – Zwraca bieżący katalog roboczy w PowerShell.
+
+
+	Przykład:
+	
+		Get-Location
+
+	Wynik:		
+		Path
+		----
+		C:\Windows\System32
+
+
+4. Move-Item – Przenosi plik lub folder do innej lokalizacji.
+
+
+	Przykład:
+	
+		Move-Item -Path "C:\Plik.txt" -Destination "C:\test\Plik.txt"
+
+
+5. New-Item – Tworzy nowy plik, folder lub inny element w systemie.
+
+
+	Przykład: Tworzenie folderu
+		
+		New-Item -Path "C:\Ścieżka" -Name "NowyFolder" -ItemType Directory
+
+	Przykład: Tworzenie pliku
+
+		New-Item -Path "C:\Ścieżka" -Name "NowyPlik.txt" -ItemType File
+
+
+6. Remove-Item – Usuwa plik lub folder z systemu.
+
+
+	Przykład: Usuwanie pliku
+
+		Remove-Item -Path "C:\Ścieżka\Plik.txt"
+
+
+7. Rename-Item – Zmienia nazwę pliku lub folderu
+
+
+	Przykład: Zmiana nazwy pliku	
+
+		Rename-Item -Path "C:\Ścieżka\StaryPlik.txt" -NewName "NowyPlik.txt"
+
+	Przykład: Zmiana nazwy folderu
+
+		Rename-Item -Path "C:\Ścieżka\StaryFolder" -NewName "NowyFolder"
+
+	
+8. Get-ChildItem – Wyświetla listę plików i folderów w określonym katalogu.
+
+
+	Przykład: Bieżąca lokalizacja	
+		
+		Get-ChildItem
+
+	Przykład: Określony folder
+		
+		Get-ChildItem -Path "C:\Ścieżka\do\folderu"
+
+	Przykład: Określone rozszerzenie
+
+		Get-ChildItem -Path "C:\Ścieżka\do\folderu" -Filter "*.txt"
+
+
+9. Get-Content – Odczytuje zawartość pliku.
+
+
+	Przykład: 
+
+		Get-Content -Path "C:\Ścieżka\plik.txt"
+
+
+10. Tee-Object – Przechwytuje dane i zapisuje je do pliku
+
+
+	Przykład:
+
+		 Get-Process | Tee-Object -FilePath "C:\Procesy.txt"
+
+
+11. attrib – Wyświetla lub zmienia atrybuty plików
+
+
+	Przykład: Ustawienie atrybutu tylko do odczytu
+
+		attrib +r "C:\Plik.txt"
+
+	Przykład: Usunięcie atrybutu tylko do odczytu
+
+		attrib -r "C:\Plik.txt"
+
+12. New-Item - Linki symboliczne 
+
+
+	Przykład: Tworzy link symboliczny do folderu.
+
+		New-Item -Path "C:\LinkDoFolderu" -ItemType SymbolicLink -Target "C:\test"
+
+	Przykład: Tworzy link symboliczny do pliku.
+
+		New-Item -Path "C:\LinkDoPliku.txt" -ItemType SymbolicLink -Target "C:\plik.txt"
+
+13. Set-Content - Edycja plików tekstowych
+
+	Przykład:
+
+		Set-Content "C:\test.txt" "Nowa zawartość pliku"
+
+14. Start-Process - Odpalanie pliku
+
+	Przykład:
+
+		Start-Process "C:\test.txt"
